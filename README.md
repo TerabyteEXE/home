@@ -1,4 +1,4 @@
-# yourname's site
+# TerabyteEXE's site
 
 A small personal site: a home page, a few blog posts, a downloads section,
 and a photo area for PC builds. Plain HTML, CSS and JS — no build step,
@@ -31,8 +31,8 @@ GitHub Pages (GitHub's docs walk through the exact records).
 ## Make it yours
 
 - **Name and bio** — edit the hero panel near the top of `index.html`,
-  and the `~/yourname` mark in the top bar on every page (find and
-  replace `yourname` across all files is the fastest way).
+  and the `~/TerabyteEXE` mark in the top bar on every page (find and
+  replace `TerabyteEXE` across all files is the fastest way).
 - **Links** — the GitHub and email links are in the same hero panel on
   `index.html`.
 - **Blog posts** — each post is its own file in `blog/`. To add one,
