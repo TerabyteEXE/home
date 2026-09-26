@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A few dotfiles worth stealing — yourname</title>
+<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-inner">
+    <a href="../index.html" class="bar-mark">~/yourname</a>
+    <nav class="bar-nav" aria-label="Primary">
+      <a href="../index.html"><span class="ws">1</span>home</a>
+      <a href="index.html" aria-current="page"><span class="ws">2</span>blog</a>
+      <a href="../downloads/index.html"><span class="ws">3</span>downloads</a>
+      <a href="../photos/index.html"><span class="ws">4</span>photos</a>
+    </nav>
+    <div class="bar-right">
+      <div class="swatches" role="group" aria-label="Theme">
+        <button class="swatch" data-theme="tokyo-night" style="--sw-a:#7aa2f7;--sw-b:#bb9af7" aria-label="Tokyo Night theme" aria-pressed="true"></button>
+        <button class="swatch" data-theme="catppuccin" style="--sw-a:#89b4fa;--sw-b:#f5c2e7" aria-label="Catppuccin theme" aria-pressed="false"></button>
+        <button class="swatch" data-theme="gruvbox" style="--sw-a:#fe8019;--sw-b:#b8bb26" aria-label="Gruvbox theme" aria-pressed="false"></button>
+        <button class="swatch" data-theme="nord" style="--sw-a:#81a1c1;--sw-b:#8fbcbb" aria-label="Nord theme" aria-pressed="false"></button>
+        <button class="swatch" data-theme="everforest" style="--sw-a:#a7c080;--sw-b:#7fbbb3" aria-label="Everforest theme" aria-pressed="false"></button>
+        <button class="swatch" data-theme="kanagawa" style="--sw-a:#7e9cd8;--sw-b:#957fb8" aria-label="Kanagawa theme" aria-pressed="false"></button>
+      </div>
+      <span class="bar-clock mono" data-clock>00:00</span>
+      <button class="bar-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
+    <div class="bar-drop">
+      <a href="../index.html">home</a>
+      <a href="index.html" aria-current="page">blog</a>
+      <a href="../downloads/index.html">downloads</a>
+      <a href="../photos/index.html">photos</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <article>
+    <header class="post-head">
+      <p class="post-date">Jan 2026</p>
+      <h1>A few dotfiles worth stealing</h1>
+    </header>
+
+    <div class="post-body">
+      <p>
+        Not a full dotfiles dump — just the handful of changes that made the
+        biggest difference relative to how small they are. All three are in
+        the <a href="../downloads/index.html" style="text-decoration:underline;">downloads</a>
+        section if you want the real files instead of the summary.
+      </p>
+
+      <h2>A dedicated scratchpad terminal</h2>
+      <p>
+        One Hyprland keybind that spawns a floating, centered terminal on any
+        workspace. It's the single most-used shortcut on my machine — quicker
+        than switching workspaces for anything that takes under a minute.
+      </p>
+
+      <h2>A Waybar module that shows nothing, on purpose</h2>
+      <p>
+        I removed CPU, RAM and disk usage from my bar entirely. I never once
+        made a decision based on glancing at them, and an empty corner of the
+        screen turned out to be worth more than the data was.
+      </p>
+
+      <h2>A starship prompt that only shows git status when it's dirty</h2>
+      <p>
+        A clean repo gets a clean prompt. The moment something's staged,
+        modified, or ahead of origin, the prompt grows a section for it. Saves
+        a full line of vertical space most of the time, without hiding
+        anything I actually need.
+      </p>
+    </div>
+
+    <nav class="post-nav">
+      <a href="switching-to-omarchy.html">previous post</a>
+      <a href="first-build-lessons.html">next post</a>
+    </nav>
+  </article>
+</main>
+
+<footer class="wrap">
+  <p style="margin:0;">yourname · built with plain HTML, CSS and JS · <a href="https://github.com/yourname" style="text-decoration:underline;">source</a></p>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
