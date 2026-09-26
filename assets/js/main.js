@@ -8,6 +8,7 @@
   "use strict";
 
   var STORAGE_KEY = "site-theme";
+  var POPUP_STORAGE_KEY = "welcome-popup-seen";
   var THEME_NAMES = {
     "tokyo-night": "Tokyo Night",
     "catppuccin": "Catppuccin",
@@ -118,10 +119,53 @@
     });
   }
 
+  /* ---- Welcome popup ------------------------------------------------------ */
+
+  function initWelcomePopup() {
+    var popup = document.querySelector("[data-welcome-popup]");
+    if (!popup) return;
+
+    var hasSeenPopup = false;
+    try {
+      hasSeenPopup = localStorage.getItem(POPUP_STORAGE_KEY) === "true";
+    } catch (e) {
+      /* localStorage unavailable */
+    }
+
+    if (!hasSeenPopup) {
+      popup.classList.add("is-open");
+      try {
+        localStorage.setItem(POPUP_STORAGE_KEY, "true");
+      } catch (e) {
+        /* ignore — popup will show again next visit */
+      }
+    }
+
+    var closeBtn = popup.querySelector("[data-popup-close]");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function () {
+        popup.classList.remove("is-open");
+      });
+    }
+
+    popup.addEventListener("click", function (e) {
+      if (e.target === popup) {
+        popup.classList.remove("is-open");
+      }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && popup.classList.contains("is-open")) {
+        popup.classList.remove("is-open");
+      }
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initThemeSwitcher();
     initNavToggle();
     initClock();
     initLightbox();
+    initWelcomePopup();
   });
 })();
