@@ -54,6 +54,36 @@
     });
   }
 
+  /* ---- Ensure every page is reachable from each page's navigation ---- */
+
+  function initPageLinks() {
+    var pageRoot = location.pathname.replace(/(?:photos|downloads|physics)\/(?:index\.html)?$|index\.html$/, "");
+    if (!pageRoot.endsWith("/")) pageRoot += "/";
+    var physicsPath = pageRoot + "physics/index.html";
+
+    document.querySelectorAll(".bar-nav, .bar-drop").forEach(function (nav) {
+      var alreadyLinked = Array.prototype.some.call(nav.querySelectorAll("a[href]"), function (link) {
+        try {
+          return new URL(link.getAttribute("href"), location.href).pathname === physicsPath;
+        } catch (e) {
+          return false;
+        }
+      });
+      if (alreadyLinked) return;
+
+      var link = document.createElement("a");
+      link.href = physicsPath;
+      if (nav.classList.contains("bar-nav")) {
+        var number = document.createElement("span");
+        number.className = "ws";
+        number.textContent = "6";
+        link.appendChild(number);
+      }
+      link.appendChild(document.createTextNode("Physics Lab"));
+      nav.appendChild(link);
+    });
+  }
+
   /* ---- Mobile nav toggle ---------------------------------------------- */
 
   function initNavToggle() {
@@ -163,6 +193,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     initThemeSwitcher();
+    initPageLinks();
     initNavToggle();
     initClock();
     initLightbox();
